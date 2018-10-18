@@ -9,7 +9,7 @@ private:
 
 public:
 	static void IncrementCount();
-	static void GetCount();
+	static int GetCount();
 	
 private:
 	int _count = 0;
