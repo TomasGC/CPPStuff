@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "FizzBuzz.h"
 
-TEST(PlayUnitTest, getIDPlayer)
+TEST(FizzBuzzTest, getIDPlayer)
 {
   EXPECT_EQ ("Fizz", GetFizzBuzz(3));
   EXPECT_EQ ("Buzz", GetFizzBuzz(5));

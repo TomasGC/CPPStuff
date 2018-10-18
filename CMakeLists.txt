@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.2)
 # The project name.
 project (CPPStuff)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 
 # The version number.
 set (CPPStuff_VERSION_MAJOR 1)
@@ -13,6 +13,7 @@ set (CPPStuff_VERSION_MINOR 0)
 # Add the subdirectories containing cpp files.
 add_subdirectory(libDesignPatterns)
 add_subdirectory(libAlgorithms)
+add_subdirectory(tests)
 
 set(SRCS main.cpp)
 
