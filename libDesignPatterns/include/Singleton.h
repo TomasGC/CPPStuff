@@ -1,3 +1,5 @@
+#ifndef SINGLETON_H
+#define SINGLETON_H
 #pragma once
 
 class Singleton
@@ -15,3 +17,4 @@ private:
 	int _count = 0;
 };
 
+#endif

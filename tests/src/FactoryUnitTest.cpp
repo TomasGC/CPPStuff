@@ -1,4 +1,5 @@
 #include "gtest/gtest.h"
+#include "Polymorphism.h"
 #include "Factory.h"
 
 TEST(FactoryTest, GetType)

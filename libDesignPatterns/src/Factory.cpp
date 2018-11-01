@@ -1,8 +1,9 @@
 #include <iostream>
 
+#include "Polymorphism.h"
 #include "Factory.h"
 
-IBase* Factory::CreateFObject(FClassType type)
+IBase* Factory::CreateFObject(ClassType type)
 {
 	switch(type)
 	{
