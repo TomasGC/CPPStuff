@@ -5,11 +5,10 @@
 class IBase;
 enum ClassType;
 
-// Factory
 class Factory
 {
   public:
-	static IBase *CreateFObject(ClassType type);
+	static IBase* CreateFObject(ClassType type);
 };
 
 #endif

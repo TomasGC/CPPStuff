@@ -6,7 +6,6 @@ class ChildA;
 class ChildB;
 class ChildC;
 
-// Visitor
 class Visitor
 {
   public:
