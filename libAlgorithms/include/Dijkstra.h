@@ -16,7 +16,7 @@ class Dijkstra
 	int *GetOutput();
 
   private:
-	int MinDistance();
+	int GetMinDistanceIndex();
 
 	std::vector<std::vector<int>> &_graph;
 
