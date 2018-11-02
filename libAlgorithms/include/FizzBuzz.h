@@ -2,7 +2,7 @@
 #define FIZZBUZZ_H
 #pragma once
 
-#include <string>
+#include <iostream>
 
 std::string GetFizzBuzz(int i);
 void FizzBuzz();

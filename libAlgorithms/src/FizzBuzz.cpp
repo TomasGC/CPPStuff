@@ -1,7 +1,3 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-
 #include "FizzBuzz.h"
 
 using namespace std;
