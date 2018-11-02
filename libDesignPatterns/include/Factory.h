@@ -2,13 +2,13 @@
 #define FACTORY_H
 #pragma once
 
-class IBase;
+class Base;
 enum ClassType;
 
 class Factory
 {
-  public:
-	static IBase* CreateFObject(ClassType type);
+public:
+	static Base *CreateFObject(ClassType type);
 };
 
 #endif

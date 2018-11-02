@@ -3,8 +3,8 @@
 
 TEST(FizzBuzzTest, GetFizzBuzz)
 {
-  EXPECT_EQ ("Fizz", GetFizzBuzz(3));
-  EXPECT_EQ ("Buzz", GetFizzBuzz(5));
-  EXPECT_EQ ("1", GetFizzBuzz(1));
-  EXPECT_EQ ("FizzBuzz", GetFizzBuzz(15));
+  EXPECT_EQ("Fizz", GetFizzBuzz(3));
+  EXPECT_EQ("Buzz", GetFizzBuzz(5));
+  EXPECT_EQ("1", GetFizzBuzz(1));
+  EXPECT_EQ("FizzBuzz", GetFizzBuzz(15));
 }

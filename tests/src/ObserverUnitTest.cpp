@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 
 #include "Observer.h"
+#include "Singleton.h"
 
 TEST(ObserverTest, GetState)
 {
@@ -8,8 +9,9 @@ TEST(ObserverTest, GetState)
 	ViewOne v1(subj);
 	ViewTwo v2(subj);
 
-	std::ostringstream os;
-	subj.SetState(14, os);
+	Singleton::ClearString();
 
-	EXPECT_EQ(os.str(), "State of ViewOne: 14 State of ViewTwo: 14");
+	subj.SetState(14);
+
+	EXPECT_EQ(Singleton::GetString(), "State of ViewOne: 14 State of ViewTwo: 14.");
 }

@@ -13,10 +13,12 @@ enum ClassType
 };
 
 // Base Class
-class IBase
+class Base
 {
-  public:
-	virtual ~IBase() {}
+public:
+	Base();
+	virtual ~Base();
+
 	virtual void Accept(Visitor &v) = 0;
 
 	inline void SetValue(int value) { _value = value; }
@@ -24,29 +26,31 @@ class IBase
 
 	inline ClassType GetType() { return _classType; }
 
-  protected:
+protected:
 	int _value = 0;
 	ClassType _classType = COUNT;
 };
 
 // Derivated Classes
-class ChildA : public IBase
+class ChildA : public Base
 {
-  public:
+public:
 	ChildA();
+	~ChildA();
+
 	void Accept(Visitor &v) override;
 };
 
-class ChildB : public IBase
+class ChildB : public Base
 {
-  public:
+public:
 	ChildB();
 	void Accept(Visitor &v) override;
 };
 
-class ChildC : public IBase
+class ChildC : public Base
 {
-  public:
+public:
 	ChildC();
 	void Accept(Visitor &v) override;
 };

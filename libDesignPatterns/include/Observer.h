@@ -11,7 +11,7 @@ class Observer
 public:
 	Observer(Subject &subject);
 	virtual ~Observer() {}
-	virtual void Update(std::ostream &os) = 0;
+	virtual void Update() = 0;
 
 protected:
 	Subject &GetSubject()
@@ -27,23 +27,23 @@ class ViewOne : public Observer
 {
 public:
 	ViewOne(Subject &subject);
-	void Update(std::ostream &os) override;
+	void Update() override;
 };
 
 class ViewTwo : public Observer
 {
 public:
 	ViewTwo(Subject &subject);
-	void Update(std::ostream &os) override;
+	void Update() override;
 };
 
 class Subject
 {
 public:
 	void Attach(Observer *observer);
-	void Notify(std::ostream &os);
+	void Notify();
 
-	void SetState(int state, std::ostream &os);
+	void SetState(int state);
 	int GetState();
 
 private:

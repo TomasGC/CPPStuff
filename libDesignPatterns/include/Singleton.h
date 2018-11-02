@@ -4,17 +4,24 @@
 
 class Singleton
 {
-private:
+  private:
 	Singleton() {}
 
-	static Singleton& GetInstance();
+	static Singleton &GetInstance();
 
-public:
+  public:
+	static const Singleton *GetAddress();
+
 	static void IncrementCount();
-	static int GetCount();
-	
-private:
+	static const int GetCount();
+
+	static void SetString(std::string &str);
+	static const std::string GetString();
+	static void ClearString();
+
+  private:
 	int _count = 0;
+	std::string _str;
 };
 
 #endif

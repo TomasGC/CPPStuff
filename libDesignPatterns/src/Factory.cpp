@@ -3,27 +3,27 @@
 #include "Polymorphism.h"
 #include "Factory.h"
 
-IBase* Factory::CreateFObject(ClassType type)
+Base *Factory::CreateFObject(ClassType type)
 {
-	switch(type)
+	switch (type)
 	{
-		case A:
-		{
-			return new ChildA();
-			break;
-		}
+	case A:
+	{
+		return new ChildA();
+		break;
+	}
 
-		case B:
-		{
-			return new ChildB();
-			break;
-		}
+	case B:
+	{
+		return new ChildB();
+		break;
+	}
 
-		case C:
-		{
-			return new ChildC();
-			break;
-		}
+	case C:
+	{
+		return new ChildC();
+		break;
+	}
 	}
 
 	return NULL;
