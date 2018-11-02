@@ -7,6 +7,23 @@
 
 Dijkstra::Dijkstra(std::vector<std::vector<int>> &graph) : _graph(graph)
 {
+}
+
+Dijkstra::~Dijkstra()
+{
+	if (_output)
+	{
+		delete[] _output;
+	}
+
+	if (_isInShortestPath)
+	{
+		delete[] _isInShortestPath;
+	}
+}
+
+void Dijkstra::Run(int src)
+{
 	_output = new int[_graph.size()];
 	_isInShortestPath = new bool[_graph.size()];
 
@@ -15,16 +32,7 @@ Dijkstra::Dijkstra(std::vector<std::vector<int>> &graph) : _graph(graph)
 		_output[i] = INT_MAX;
 		_isInShortestPath[i] = false;
 	}
-}
 
-Dijkstra::~Dijkstra()
-{
-	delete[] _output;
-	delete[] _isInShortestPath;
-}
-
-void Dijkstra::Run(int src)
-{
 	_output[src] = 0;
 
 	for (int i = 0; i < _graph.size() - 1; ++i)
