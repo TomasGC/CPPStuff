@@ -41,7 +41,7 @@ void Dijkstra::Run(int src)
 
 		_isInShortestPath[minIndex] = true;
 
-		for (int j = 0; j < _graph[0].size(); ++j)
+		for (int j = 0; j < _graph[i].size(); ++j)
 		{
 			bool isNotInfinit = _output[minIndex] != INT_MAX;
 			bool isDistanceSmaller = _output[minIndex] + _graph[minIndex][j] < _output[j];
