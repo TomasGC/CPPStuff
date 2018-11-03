@@ -7,22 +7,28 @@
 
 Dijkstra::Dijkstra(std::vector<std::vector<int>> &graph) : _graph(graph)
 {
+	Initialization();
 }
 
 Dijkstra::~Dijkstra()
 {
-	if (_output)
+	Clean();
+}
+
+void Dijkstra::Clean()
+{
+	if (_output == NULL)
 	{
 		delete[] _output;
 	}
 
-	if (_isInShortestPath)
+	if (_isInShortestPath == NULL)
 	{
 		delete[] _isInShortestPath;
 	}
 }
 
-void Dijkstra::Run(int src)
+void Dijkstra::Initialization()
 {
 	_output = new int[_graph.size()];
 	_isInShortestPath = new bool[_graph.size()];
@@ -32,6 +38,13 @@ void Dijkstra::Run(int src)
 		_output[i] = INT_MAX;
 		_isInShortestPath[i] = false;
 	}
+}
+
+void Dijkstra::Run(int src)
+{
+	Clean();
+
+	Initialization();
 
 	_output[src] = 0;
 
