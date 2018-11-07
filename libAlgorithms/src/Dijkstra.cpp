@@ -57,11 +57,12 @@ void Dijkstra::Run(int src)
 		for (int j = 0; j < _graph[i].size(); ++j)
 		{
 			bool isNotInfinit = _output[minIndex] != INT_MAX;
-			bool isDistanceSmaller = _output[minIndex] + _graph[minIndex][j] < _output[j];
+			int sumDistances = _output[minIndex] + _graph[minIndex][j];
+			bool isDistanceSmaller = sumDistances < _output[j];
 
 			if (!_isInShortestPath[j] && _graph[minIndex][j] && isNotInfinit && isDistanceSmaller)
 			{
-				_output[j] = _output[minIndex] + _graph[minIndex][j];
+				_output[j] = sumDistances;
 			}
 		}
 	}
@@ -70,11 +71,11 @@ void Dijkstra::Run(int src)
 int Dijkstra::GetMinDistanceIndex()
 {
 	int min = INT_MAX;
-	int minIndex = 0;
+	int minIndex = -1;
 
 	for (int i = 0; i < _graph.size(); ++i)
 	{
-		if (!_isInShortestPath[i] && _output[i] <= min)
+		if (!_isInShortestPath[i] && (_output[i] <= min))
 		{
 			min = _output[i];
 			minIndex = i;
